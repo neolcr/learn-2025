@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/main/java/org/neolcr/hexagonal/account/adapter/out/persistence/InMemoryAccountRepository.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/org/neolcr/hexagonal/account/adapter/out/persistence/InMemoryAccountRepository.java" />
+              <option name="originalContent" value="package org.neolcr.hexagonal.account.adapter.out.persistence;&#10;&#10;import org.neolcr.hexagonal.account.domain.model.Account;&#10;import org.neolcr.hexagonal.account.domain.port.out.AccountRepository;&#10;&#10;import java.util.Map;&#10;import java.util.concurrent.ConcurrentHashMap;&#10;import java.util.concurrent.atomic.AtomicLong;&#10;&#10;public class InMemoryAccountRepository implements AccountRepository {&#10;    private final Map&lt;Long, Account&gt; store = new ConcurrentHashMap&lt;&gt;();&#10;    private final AtomicLong sequence = new AtomicLong(1);&#10;&#10;    @Override&#10;    public Account save(Account account) {&#10;        if (account.getId() == null) {&#10;            account.setIdIfNull(sequence.getAndIncrement());&#10;        }&#10;        store.put(account.getId(), account);&#10;        return account;&#10;    }&#10;}&#10;&#10;" />
+              <option name="updatedContent" value="package org.neolcr.hexagonal.account.adapter.out.persistence;&#10;&#10;import org.neolcr.hexagonal.account.domain.model.Account;&#10;import org.neolcr.hexagonal.account.domain.port.out.AccountRepository;&#10;&#10;import java.util.Map;&#10;import java.util.concurrent.ConcurrentHashMap;&#10;import java.util.concurrent.atomic.AtomicLong;&#10;&#10;public class InMemoryAccountRepository implements AccountRepository {&#10;    private final Map&lt;Long, Account&gt; store = new ConcurrentHashMap&lt;&gt;();&#10;    private final AtomicLong sequence = new AtomicLong(1);&#10;&#10;    @Override&#10;    public Account save(Account account) {&#10;        if (account.getId() == null) {&#10;            account.setIdIfNull(sequence.getAndIncrement());&#10;        }&#10;        store.put(account.getId(), account);&#10;        return account;&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
